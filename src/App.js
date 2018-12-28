@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import Eyeball from "./components/Eyeball";
+import PostcardFrame from "./components/PostcardFrame";
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Eyeball />
-      </div>
+      <main>
+        <PostcardFrame>
+          <Eyeball />
+        </PostcardFrame>
+      </main>
     );
   }
 }
