@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Eyeball = props => {
   return (
     <circle
-      cx={props.cx}
+      cx={props.xPos * 100 + "%"}
       cy="50%"
       r="7%"
       stroke="black"
@@ -15,7 +15,7 @@ const Eyeball = props => {
 };
 
 Eyeball.propTypes = {
-  cx: PropTypes.number.isRequired
+  xPos: PropTypes.number.isRequired // should be a percent
 };
 
 export default Eyeball;

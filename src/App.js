@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <main>
         <PostcardFrame>
-          <Eyeball />
+          <Eyeball xPos={0.5} />
         </PostcardFrame>
       </main>
     );
