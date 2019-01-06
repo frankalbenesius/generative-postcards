@@ -28,7 +28,7 @@ storiesOf("Eyeball", module)
     <div>
       <p>Note the jitter.</p>
       <TestFrame width={400} height={250}>
-        {range(0.05, 0.96, 0.1).map(n => (
+        {range(0.1, 0.91, 0.05).map(n => (
           <Eyeball key={n} xPos={n} />
         ))}
       </TestFrame>

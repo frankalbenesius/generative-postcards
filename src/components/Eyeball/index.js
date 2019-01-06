@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import jitter from "../../jitter";
 
 const Eyeball = props => {
-  const radiusPercent = jitter(7);
+  // this jitter is tiny and mostly serves to make the eyes in an
+  // Eyes component slightly different from each other
+  const radiusPercent = jitter(7, 0.05);
   return (
     <circle
       cx={props.xPos * 100 + "%"}
