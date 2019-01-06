@@ -1,12 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import jitter from "../../jitter";
 
 const Eyeball = props => {
+  const radiusPercent = jitter(7);
   return (
     <circle
       cx={props.xPos * 100 + "%"}
       cy="50%"
-      r="7%"
+      r={`${radiusPercent}%`}
       stroke="black"
       strokeWidth="1"
       fill="none"
