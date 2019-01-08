@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import Eyeball from "./components/Eyeball";
 import PostcardFrame from "./components/PostcardFrame";
+import Peepers from "./components/Peepers";
 
 class App extends Component {
   render() {
     return (
       <main>
         <PostcardFrame>
-          <Eyeball xPos={0.5} />
+          <Peepers />
         </PostcardFrame>
       </main>
     );

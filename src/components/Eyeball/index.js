@@ -5,12 +5,13 @@ import jitter from "../../jitter";
 const Eyeball = props => {
   // this jitter is tiny and mostly serves to make the eyes in an
   // Eyes component slightly different from each other
-  const radiusPercent = jitter(7, 0.05);
+  const r = jitter(props.radius, 0.05);
+  const cy = jitter(props.yPos, 0.03);
   return (
     <circle
       cx={props.xPos * 100 + "%"}
-      cy="50%"
-      r={`${radiusPercent}%`}
+      cy={cy * 100 + "%"}
+      r={r * 100 + "%"}
       stroke="black"
       strokeWidth="1"
       fill="none"
@@ -19,7 +20,9 @@ const Eyeball = props => {
 };
 
 Eyeball.propTypes = {
-  xPos: PropTypes.number.isRequired // should be a percent
+  xPos: PropTypes.number.isRequired,
+  yPos: PropTypes.number.isRequired,
+  radius: PropTypes.number.isRequired
 };
 
 export default Eyeball;
