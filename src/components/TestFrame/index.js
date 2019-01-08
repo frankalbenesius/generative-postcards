@@ -8,8 +8,8 @@ const TestFrame = props => {
       height={props.height}
       style={{ background: "lavender" }}
     >
-      <text x="5%" y="90%" fontSize="12px">
-        {props.width} x {props.height}
+      <text x="5%" y="90%" fontSize="12px" fontFamily="monospace">
+        {props.width}x{props.height}
       </text>
       {props.children}
     </svg>
