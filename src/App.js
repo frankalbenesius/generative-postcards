@@ -5,6 +5,11 @@ import Noggin from "./components/Noggin";
 
 class App extends Component {
   state = 0;
+  componentDidMount() {
+    setInterval(() => {
+      this.setState(x => x + 1);
+    }, 1000);
+  }
   handleClick = () => {
     this.setState(x => x + 1);
   };
