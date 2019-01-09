@@ -4,7 +4,7 @@ import jitter, { jitterAndMaybeNegate } from "../../jitter";
 
 const Gob = props => {
   const height = jitter(0.6 * 100, 0.05);
-  const width = jitter(75, 0.2);
+  const width = jitter(70, 0.2);
   const startAt = props.xPos * 100 - width / 2;
   const baseSmileTurn = jitterAndMaybeNegate(2, 0.4);
   const leftTurn = jitter(baseSmileTurn, 1);

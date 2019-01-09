@@ -5,7 +5,7 @@ import jitter from "../../jitter";
 
 const Peepers = props => {
   const yPos = jitter(0.42, 0.06);
-  const eyeSeparation = jitter(0.55, 0.18);
+  const eyeSeparation = jitter(0.7, 0.18);
   const xLeft = props.xPos - eyeSeparation / 2;
   const xRight = props.xPos + eyeSeparation / 2;
   const radius = jitter(0.05, 0.3);

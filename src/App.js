@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PostcardFrame from "./components/PostcardFrame";
-import Peepers from "./components/Peepers";
-import Gob from "./components/Gob";
+import Noggin from "./components/Noggin";
 
 class App extends Component {
   state = 0;
@@ -12,8 +11,7 @@ class App extends Component {
     return (
       <main onClick={this.handleClick}>
         <PostcardFrame>
-          <Peepers xPos={0.5} />
-          <Gob xPos={0.5} />
+          <Noggin cx={300} cy={200} width={500} height={300} />
         </PostcardFrame>
       </main>
     );
