@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import range from "lodash/range";
 import PostcardFrame from "./components/PostcardFrame";
 import Noggin from "./components/Noggin";
 
@@ -11,7 +12,16 @@ class App extends Component {
     return (
       <main onClick={this.handleClick}>
         <PostcardFrame>
-          <Noggin cx={300} cy={200} width={500} height={300} />
+          {range(10).map(x =>
+            range(10).map(y => (
+              <Noggin
+                cx={5 + x * 59 + 29.5}
+                cy={5 + y * 39 + 19.5}
+                width={59}
+                height={39}
+              />
+            ))
+          )}
         </PostcardFrame>
       </main>
     );
