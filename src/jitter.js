@@ -6,4 +6,9 @@ const jitter = (input, bounds = 0.1) => {
   return input + difference;
 };
 
+export const jitterAndMaybeNegate = (input, bounds) => {
+  const plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+  return jitter(input, bounds) * plusOrMinus;
+};
+
 export default jitter;

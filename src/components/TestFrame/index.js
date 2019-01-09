@@ -6,7 +6,7 @@ const TestFrame = props => {
     <svg
       width={props.width}
       height={props.height}
-      style={{ background: "lavender" }}
+      style={{ background: "lavender", marginRight: "0.25rem" }}
     >
       <text x="5%" y="90%" fontSize="12px" fontFamily="monospace">
         {props.width}x{props.height}
