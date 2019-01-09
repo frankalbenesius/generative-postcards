@@ -15,7 +15,6 @@ const Gob = props => {
       height="100%"
       viewBox="0 0 100 100"
       preserveAspectRatio="none"
-      style={{ background: "red" }}
     >
       <path
         d={`

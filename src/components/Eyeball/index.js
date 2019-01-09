@@ -3,19 +3,33 @@ import PropTypes from "prop-types";
 import jitter from "../../jitter";
 
 const Eyeball = props => {
-  // this jitter is tiny and mostly serves to make the eyes in an
-  // Eyes component slightly different from each other
-  const r = jitter(props.radius, 0.1);
-  const cy = jitter(props.yPos, 0.03);
+  // 100x lets us work in the relative svg
+  const xPos = props.xPos * 100;
+  const r = jitter(props.radius, 0.1) * 100; // differentiates eyeballs in a Peepers
+  const yPos = jitter(props.yPos, 0.03) * 100; // center of eyeball, determines height
+
+  const ctrlJit = () => jitter(r / 2, 0.23); // this make it a non-perfect circle
   return (
-    <circle
-      cx={props.xPos * 100 + "%"}
-      cy={cy * 100 + "%"}
-      r={r * 100 + "%"}
-      stroke="black"
-      strokeWidth="1"
-      fill="white"
-    />
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 100 100"
+      style={{ background: "red" }}
+    >
+      <path
+        d={`
+          M ${xPos} ${yPos - r}
+          c ${ctrlJit()} 0, ${r} ${ctrlJit()}, ${r} ${r}
+          c 0 ${ctrlJit()}, ${-ctrlJit()} ${r}, ${-r} ${r}
+          c ${-ctrlJit()} 0, ${-r} ${-ctrlJit()}, ${-r} ${-r}
+          c 0 ${-ctrlJit()} ${ctrlJit()} ${-r}, ${r} ${-r}
+        `}
+        stroke="black"
+        strokeWidth="1"
+        fill="white"
+        vectorEffect="non-scaling-stroke" // keeps stroke width 1 px
+      />
+    </svg>
   );
 };
 
