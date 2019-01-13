@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Socket from "../Socket";
+import Peeper from "../Peeper";
 import jitter from "../../jitter";
 
 const Peepers = props => {
@@ -11,8 +11,8 @@ const Peepers = props => {
   const radius = jitter(0.05, 0.3);
   return (
     <g>
-      <Socket xPos={xLeft} yPos={yPos} radius={radius} />
-      <Socket xPos={xRight} yPos={yPos} radius={radius} />
+      <Peeper xPos={xLeft} yPos={yPos} radius={radius} />
+      <Peeper xPos={xRight} yPos={yPos} radius={radius} />
     </g>
   );
 };

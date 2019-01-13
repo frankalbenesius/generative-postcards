@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import jitter from "../../jitter";
 
-const Socket = props => {
+const Peeper = props => {
   // 100x lets us work in the relative svg
   const xPos = props.xPos * 100;
-  const r = jitter(props.radius, 0.1) * 100; // differentiates Sockets in a Peepers
-  const yPos = jitter(props.yPos, 0.03) * 100; // center of Socket, determines height
+  const r = jitter(props.radius, 0.1) * 100; // differentiates Peepers in a Peepers
+  const yPos = jitter(props.yPos, 0.03) * 100; // center of Peeper, determines height
 
   const ctrlJit = () => jitter(r / 2, 0.23); // this make it a non-perfect circle
   return (
@@ -33,10 +33,10 @@ const Socket = props => {
   );
 };
 
-Socket.propTypes = {
+Peeper.propTypes = {
   xPos: PropTypes.number.isRequired,
   yPos: PropTypes.number.isRequired,
   radius: PropTypes.number.isRequired
 };
 
-export default Socket;
+export default Peeper;
