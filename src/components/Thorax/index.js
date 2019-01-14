@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import jitter from "../../jitter";
 
-const Torso = p => {
+const Thorax = p => {
   // const facing = 0.5;
 
   const w = p.width;
@@ -34,7 +34,7 @@ const Torso = p => {
   );
 };
 
-Torso.propTypes = {
+Thorax.propTypes = {
   // facing
   cx: PropTypes.number.isRequired,
   cy: PropTypes.number.isRequired,
@@ -42,4 +42,4 @@ Torso.propTypes = {
   height: PropTypes.number.isRequired
 };
 
-export default Torso;
+export default Thorax;
