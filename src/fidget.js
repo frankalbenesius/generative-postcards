@@ -13,9 +13,9 @@ export default function fidget(initial, maxShift) {
  * @param {number} xr horizontal radius
  * @param {number} yr vertical radius
  */
-export function fidgetOvalPath(cx, cy, xr, yr = xr) {
-  const fx = cx => fidget(cx, xr / 5); // horizontal control point fidgeter
-  const fy = cy => fidget(cy, yr / 5); // vertical control point fidgeter
+export function fidgetOvalPath(cx, cy, xr, yr, stabilizer = 0.125) {
+  const fx = cx => fidget(cx, xr * stabilizer); // horizontal control point fidgeter
+  const fy = cy => fidget(cy, yr * stabilizer); // vertical control point fidgeter
   const hxr = xr / 2;
   const hyr = yr / 2;
   return `

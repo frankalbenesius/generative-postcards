@@ -7,10 +7,10 @@ const Peepers = ({ cx, cy, r, xOffset }) => {
   const fx = cx => fidget(cx, xOffset / 12);
   const fy = cy => fidget(cy, xOffset / 18);
   return (
-    <g>
+    <>
       <Peeper cx={fx(cx - xOffset)} cy={fy(cy)} r={r} />
       <Peeper cx={fx(cx + xOffset)} cy={fy(cy)} r={r} />
-    </g>
+    </>
   );
 };
 

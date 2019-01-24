@@ -10,7 +10,7 @@ const Gob = ({ cx, cy, width }) => {
   const acx = f(cx - hw, hw / 20);
   const bcx = f(cx + hw, hw / 20);
 
-  const fy = cy => f(cy, cy * 0.2);
+  const fy = cy => f(cy, cy * 0.1);
   return (
     <path
       d={`

@@ -1,45 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
-import jitter from "../../jitter2";
 import Peepers from "../Peepers";
 import Gob from "../Gob";
+import { fidgetOvalPath } from "../../fidget";
 
-const Noggin = props => {
-  const facing = 0.5;
-
-  const hw = props.width / 2;
-  const hh = props.height / 2;
-  const j = x => jitter(x, 0.15);
-
+const Noggin = ({ cx, cy, width, height }) => {
+  console.log(width);
+  console.log(height);
   return (
-    <svg
-      x={props.cx - props.width / 2}
-      y={props.cy - props.height / 2}
-      width={props.width}
-      height={props.height}
-      style={{ overflow: "visible" }}
-    >
+    <>
       <path
-        d={`
-          M ${hw} 0
-          c ${hw * j(0.6)} 0,  ${hw} ${hh * j(0.4)},   ${hw} ${hh}
-          c 0 ${hh * j(0.6)},  ${-hw * j(0.4)} ${hh},  ${-hw} ${hh}
-          c ${-hw * j(0.6)} 0, ${-hw} ${-hh * j(0.4)}, ${-hw} ${-hh}
-          c 0 ${-hh * j(0.6)}, ${hw * j(0.4)} ${-hh},  ${hw} ${-hh}
-        `}
+        d={fidgetOvalPath(cx, cy, width * 0.45, height * 0.45, 0.1)}
         stroke="black"
-        strokeWidth="1"
-        fill="white"
-        vectorEffect="non-scaling-stroke" // keeps stroke width 1 px
+        fill="none"
       />
-      <Peepers xPos={facing} />
-      <Gob xPos={facing} />
-    </svg>
+      <Peepers
+        cx={width / 2}
+        cy={height * 0.45}
+        r={height * 0.071}
+        xOffset={width * 0.22}
+      />
+      <Gob cx={width / 2} cy={height * 0.65} width={width * 0.6} />
+    </>
   );
 };
 
 Noggin.propTypes = {
-  // facing
   cx: PropTypes.number.isRequired,
   cy: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,

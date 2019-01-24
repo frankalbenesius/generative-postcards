@@ -5,7 +5,11 @@ import fidget, { fidgetOvalPath } from "../../fidget";
 const Peeper = ({ cx, cy, r }) => {
   const fidgetR = fidget(r, r * 0.08);
   return (
-    <path d={fidgetOvalPath(cx, cy, fidgetR)} stroke="black" fill="none" />
+    <path
+      d={fidgetOvalPath(cx, cy, fidgetR, fidgetR, 0.2)}
+      stroke="black"
+      fill="none"
+    />
   );
 };
 

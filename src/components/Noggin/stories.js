@@ -6,12 +6,17 @@ import range from "lodash/range";
 
 storiesOf("Noggin", module)
   .add("in several svg frames", () => {
-    const frames = [[100, 100], [200, 150], [400, 300]];
+    const frames = [[150, 100], [200, 150], [400, 300]];
     return frames.map(([width, height]) => {
       return (
         <div>
           <TestFrame width={width} height={height}>
-            <Noggin cx={50} cy={37.5} width={80} height={60} />
+            <Noggin
+              cx={width / 2}
+              cy={height / 2}
+              width={width}
+              height={height}
+            />
           </TestFrame>
         </div>
       );
@@ -21,7 +26,7 @@ storiesOf("Noggin", module)
     <div>
       {range(60).map(n => (
         <TestFrame key={n} width={100} height={75}>
-          <Noggin cx={50} cy={37.5} width={80} height={60} />
+          <Noggin cx={50} cy={75 / 2} width={100} height={75} />
         </TestFrame>
       ))}
     </div>
