@@ -2,16 +2,17 @@ import React from "react";
 import range from "lodash/range";
 import Noggin from "../components/Noggin";
 
-export default function() {
+export default function({ x, y, width, height }) {
+  const n = 10;
   return (
     <>
-      {range(10).map(x =>
-        range(10).map(y => (
+      {range(n).map(i =>
+        range(n).map(j => (
           <Noggin
-            cx={5 + x * 59 + 29.5}
-            cy={5 + y * 39 + 19.5}
-            width={59}
-            height={39}
+            cx={x + (width / n) * i + width / n / 2}
+            cy={y + (height / n) * j + height / n / 2}
+            width={width / n}
+            height={height / n}
           />
         ))
       )}

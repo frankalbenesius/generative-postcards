@@ -5,22 +5,20 @@ import Gob from "../Gob";
 import { fidgetOvalPath } from "../../fidget";
 
 const Noggin = ({ cx, cy, width, height }) => {
-  console.log(width);
-  console.log(height);
   return (
     <>
       <path
-        d={fidgetOvalPath(cx, cy, width * 0.45, height * 0.45, 0.1)}
+        d={fidgetOvalPath(cx, cy, width * 0.47, height * 0.47, 0.115)}
         stroke="black"
         fill="none"
       />
       <Peepers
-        cx={width / 2}
-        cy={height * 0.45}
+        cx={cx}
+        cy={cy - height * 0.1}
         r={height * 0.071}
         xOffset={width * 0.22}
       />
-      <Gob cx={width / 2} cy={height * 0.65} width={width * 0.6} />
+      <Gob cx={cx} cy={cy + height * 0.15} width={width * 0.6} />
     </>
   );
 };

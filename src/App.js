@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <main onClick={this.handleClick}>
         <PostcardFrame>
-          <NogginGrid />
+          <NogginGrid x={5} y={5} width={590} height={390} />
         </PostcardFrame>
       </main>
     );

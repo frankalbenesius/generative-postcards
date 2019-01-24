@@ -5,12 +5,12 @@ import { default as f } from "../../fidget";
 const Gob = ({ cx, cy, width }) => {
   const hw = width / 2;
 
-  const acy = f(cy, cy * 0.03);
-  const bcy = f(cy, cy * 0.03);
+  const acy = f(cy, width * 0.05);
+  const bcy = f(cy, width * 0.05);
   const acx = f(cx - hw, hw / 20);
   const bcx = f(cx + hw, hw / 20);
 
-  const fy = cy => f(cy, cy * 0.1);
+  const fy = cy => f(cy, width * 0.1);
   return (
     <path
       d={`
