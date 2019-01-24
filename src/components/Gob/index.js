@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import jitter, { jitterAndMaybeNegate } from "../../jitter";
+import jitter, { jitterAndMaybeNegate } from "../../jitter2";
 
 const Gob = props => {
   const height = jitter(0.6 * 100, 0.05);

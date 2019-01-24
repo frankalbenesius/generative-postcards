@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import jitter from "../../jitter";
+import jitter from "../../jitter2";
 import Peepers from "../Peepers";
 import Gob from "../Gob";
 

@@ -4,38 +4,15 @@ import Peeper from "./";
 import TestFrame from "../TestFrame";
 import range from "lodash/range";
 
-storiesOf("Peeper", module)
-  .add("in several svg frames", () => (
-    <div>
+storiesOf("Peeper", module).add("in several svg frames", () => {
+  const frames = [[100, 100], [200, 150], [400, 300]];
+  return frames.map(([width, height]) => {
+    return (
       <div>
-        <TestFrame width={100} height={100}>
-          <Peeper xPos={0.5} yPos={0.44} radius={0.07} />
+        <TestFrame width={width} height={height}>
+          <Peeper x={width / 2} y={height / 2} r={height / 8} />
         </TestFrame>
       </div>
-      <div>
-        <TestFrame width={200} height={150}>
-          <Peeper xPos={0.5} yPos={0.44} radius={0.03} />
-        </TestFrame>
-      </div>
-      <div>
-        <TestFrame width={300} height={200}>
-          <Peeper xPos={0.5} yPos={0.44} radius={0.09} />
-        </TestFrame>
-      </div>
-    </div>
-  ))
-  .add("A VERY BIG ONE", () => (
-    <TestFrame width={500} height={500}>
-      <Peeper xPos={0.5} yPos={0.5} radius={0.3} />
-    </TestFrame>
-  ))
-  .add("lots of cx prop values", () => (
-    <div>
-      <p>Note the jitter.</p>
-      <TestFrame width={400} height={250}>
-        {range(0.1, 0.91, 0.05).map(n => (
-          <Peeper key={n} xPos={n} yPos={0.4} radius={0.07} />
-        ))}
-      </TestFrame>
-    </div>
-  ));
+    );
+  });
+});

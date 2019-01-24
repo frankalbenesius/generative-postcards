@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import jitter from "../../jitter";
+import jitter from "../../jitter2";
 
 const Thorax = p => {
   // const facing = 0.5;

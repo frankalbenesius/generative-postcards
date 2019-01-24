@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Peeper from "../Peeper";
-import jitter from "../../jitter";
+import jitter from "../../jitter2";
 
 const Peepers = props => {
   const yPos = jitter(0.42, 0.06);
