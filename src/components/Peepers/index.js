@@ -1,24 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Peeper from "../Peeper";
-import jitter from "../../jitter2";
+import fidget from "../../fidget";
 
-const Peepers = props => {
-  const yPos = jitter(0.42, 0.06);
-  const eyeSeparation = jitter(0.7, 0.18);
-  const xLeft = props.xPos - eyeSeparation / 2;
-  const xRight = props.xPos + eyeSeparation / 2;
-  const radius = jitter(0.05, 0.3);
+const Peepers = ({ x, y, r, xOffset }) => {
+  const fx = x => fidget(x, xOffset / 12);
+  const fy = y => fidget(y, xOffset / 18);
   return (
     <g>
-      <Peeper xPos={xLeft} yPos={yPos} radius={radius} />
-      <Peeper xPos={xRight} yPos={yPos} radius={radius} />
+      <Peeper x={fx(x - xOffset)} y={fy(y)} r={r} />
+      <Peeper x={fx(x + xOffset)} y={fy(y)} r={r} />
     </g>
   );
 };
 
 Peepers.propTypes = {
-  xPos: PropTypes.number.isRequired
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired,
+  r: PropTypes.number.isRequired,
+  xOffset: PropTypes.number.isRequired
 };
 
 export default Peepers;

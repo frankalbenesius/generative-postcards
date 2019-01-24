@@ -2,7 +2,6 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import Peeper from "./";
 import TestFrame from "../TestFrame";
-import range from "lodash/range";
 
 storiesOf("Peeper", module).add("in several svg frames", () => {
   const frames = [[100, 100], [200, 150], [400, 300]];

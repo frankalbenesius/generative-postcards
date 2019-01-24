@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { fidgetOvalPath } from "../../fidget";
+import fidget, { fidgetOvalPath } from "../../fidget";
 
 const Peeper = ({ x, y, r }) => {
-  return <path d={fidgetOvalPath(x, y, r)} stroke="black" fill="none" />;
+  const fidgetR = fidget(r, r * 0.08);
+  return <path d={fidgetOvalPath(x, y, fidgetR)} stroke="black" fill="none" />;
 };
 
 Peeper.propTypes = {

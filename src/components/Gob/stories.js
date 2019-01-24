@@ -2,36 +2,16 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import Gob from "./";
 import TestFrame from "../TestFrame";
-import range from "lodash/range";
-import Peepers from "../Peepers";
 
-storiesOf("Gob", module)
-  .add("in several svg frames", () => (
-    <div>
+storiesOf("Gob", module).add("in several svg frames", () => {
+  const frames = [[100, 100], [200, 150], [400, 300]];
+  return frames.map(([width, height]) => {
+    return (
       <div>
-        <TestFrame width={100} height={100}>
-          <Gob xPos={0.5} />
+        <TestFrame width={width} height={height}>
+          <Gob x={width / 2} y={height / 2} width={width * 0.8} />
         </TestFrame>
       </div>
-      <div>
-        <TestFrame width={200} height={150}>
-          <Gob xPos={0.5} />
-        </TestFrame>
-      </div>
-      <div>
-        <TestFrame width={300} height={200}>
-          <Gob xPos={0.5} />
-        </TestFrame>
-      </div>
-    </div>
-  ))
-  .add("lots 'o gobs with Peepers", () => (
-    <div>
-      {range(40).map(j => (
-        <TestFrame key={j} width={150} height={100}>
-          <Gob xPos={0.5} />
-          <Peepers xPos={0.5} />
-        </TestFrame>
-      ))}
-    </div>
-  ));
+    );
+  });
+});
