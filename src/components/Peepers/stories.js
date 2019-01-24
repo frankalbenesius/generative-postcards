@@ -10,8 +10,8 @@ storiesOf("Peepers", module).add("in several svg frames", () => {
       <div>
         <TestFrame width={width} height={height}>
           <Peepers
-            x={width / 2}
-            y={height / 2}
+            cx={width / 2}
+            cy={height / 2}
             r={height / 10}
             xOffset={width / 4}
           />

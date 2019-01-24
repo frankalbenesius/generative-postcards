@@ -9,7 +9,7 @@ storiesOf("Peeper", module).add("in several svg frames", () => {
     return (
       <div>
         <TestFrame width={width} height={height}>
-          <Peeper x={width / 2} y={height / 2} r={height / 8} />
+          <Peeper cx={width / 2} cy={height / 2} r={height / 8} />
         </TestFrame>
       </div>
     );

@@ -2,20 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import { default as f } from "../../fidget";
 
-const Gob = ({ x, y, width }) => {
+const Gob = ({ cx, cy, width }) => {
   const hw = width / 2;
 
-  const aY = f(y, y * 0.03);
-  const bY = f(y, y * 0.03);
-  const aX = f(x - hw, hw / 20);
-  const bX = f(x + hw, hw / 20);
+  const acy = f(cy, cy * 0.03);
+  const bcy = f(cy, cy * 0.03);
+  const acx = f(cx - hw, hw / 20);
+  const bcx = f(cx + hw, hw / 20);
 
-  const fy = y => f(y, y * 0.2);
+  const fy = cy => f(cy, cy * 0.2);
   return (
     <path
       d={`
-        M ${aX} ${aY}
-        C ${aX} ${fy(aY)}, ${bX} ${fy(bY)}, ${bX} ${bY}
+        M ${acx} ${acy}
+        C ${acx} ${fy(acy)}, ${bcx} ${fy(bcy)}, ${bcx} ${bcy}
       `}
       stroke="black"
       fill="none"
@@ -24,8 +24,8 @@ const Gob = ({ x, y, width }) => {
 };
 
 Gob.propTypes = {
-  x: PropTypes.number,
-  y: PropTypes.number,
+  cx: PropTypes.number,
+  cy: PropTypes.number,
   width: PropTypes.number
 };
 

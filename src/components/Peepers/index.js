@@ -3,20 +3,20 @@ import PropTypes from "prop-types";
 import Peeper from "../Peeper";
 import fidget from "../../fidget";
 
-const Peepers = ({ x, y, r, xOffset }) => {
-  const fx = x => fidget(x, xOffset / 12);
-  const fy = y => fidget(y, xOffset / 18);
+const Peepers = ({ cx, cy, r, xOffset }) => {
+  const fx = cx => fidget(cx, xOffset / 12);
+  const fy = cy => fidget(cy, xOffset / 18);
   return (
     <g>
-      <Peeper x={fx(x - xOffset)} y={fy(y)} r={r} />
-      <Peeper x={fx(x + xOffset)} y={fy(y)} r={r} />
+      <Peeper cx={fx(cx - xOffset)} cy={fy(cy)} r={r} />
+      <Peeper cx={fx(cx + xOffset)} cy={fy(cy)} r={r} />
     </g>
   );
 };
 
 Peepers.propTypes = {
-  x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired,
+  cx: PropTypes.number.isRequired,
+  cy: PropTypes.number.isRequired,
   r: PropTypes.number.isRequired,
   xOffset: PropTypes.number.isRequired
 };

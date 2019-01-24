@@ -9,7 +9,7 @@ storiesOf("Gob", module).add("in several svg frames", () => {
     return (
       <div>
         <TestFrame width={width} height={height}>
-          <Gob x={width / 2} y={height / 2} width={width * 0.8} />
+          <Gob cx={width / 2} cy={height / 2} width={width * 0.8} />
         </TestFrame>
       </div>
     );
