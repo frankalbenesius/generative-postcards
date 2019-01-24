@@ -3,7 +3,7 @@ import range from "lodash/range";
 import Noggin from "../components/Noggin";
 
 export default function({ x, y, width, height }) {
-  const n = 10;
+  const n = 9;
   return (
     <>
       {range(n).map(i =>
