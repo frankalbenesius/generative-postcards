@@ -12,6 +12,7 @@ export default function fidget(initial, maxShift) {
  * @param {number} cy center position y
  * @param {number} xr horizontal radius
  * @param {number} yr vertical radius
+ * @param {number} stablizer amount to fidget
  */
 export function fidgetOvalPath(cx, cy, xr, yr, stabilizer = 0.125) {
   const fx = cx => fidget(cx, xr * stabilizer); // horizontal control point fidgeter
